@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+body{ 
+    background: url('./img/abstract.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    font-family: calibri;
+    margin: 0;
+    min-height: 100vh;
+    user-select: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_container{
+    background-color: rgb(41, 45, 51);
+    width: 1000px;
+    max-width: 100%;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.attendance_container{
+    background-color: #271464;
+    box-shadow: 0 0 15px 5px rgba(7, 6, 6, 0.5);
+    width: 1000px;
+    max-width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 50px;
+}
+
+
+table{
+    width: 100%;
+    background-color: silver;
+}
+
+#submit {
+    background-color: #93278f;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#timep{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+label{
+    font-size: 35px;
+}
+
+#ename{
+    width: 60%;
+    height: 50px;
+    font-size: 35px;
+    border: none;
+    text-align: center;
+    color: black;
+    background-color: #ffff00;
+    border-radius: 10px;
+}
+
+#remarks{
+    font-size: 40px;
+}
+
+table {
+    margin-top: 50px;
+    text-align: center;
+}
+
+table thead tr th{
+    font-size: 25px;
+    color: black;
+}
+
+table tbody tr td{
+    font-size: 25px;
+    color: black;
+}
+
+
