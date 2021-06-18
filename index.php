@@ -25,26 +25,26 @@ if(isset($_POST['submit'])){
                 $out = $row['shiftout']; 
 
                 
-if($curr_time < "15:17:00"){
+if($curr_time < "10:55:30"){
 if($in >= $curr_time){
  $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
  '$remarks')";
 } 
 
-else{
+else if($in < $curr_time){
     $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
    '$remarks1')";
 }   
 }                
  
 
-else if($curr_time > "15:17:30"){
+else if($curr_time > "10:56:00"){
 if($out < $curr_time){
  $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
  '$remarks2')";
 } 
 
-else{
+else if($out > $curr_time){
     $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
    '$remarks3')";
 }   
@@ -100,12 +100,12 @@ else{
                         <th>Time Out</th>
                         <th>Arrived</th>
                         <th>Leaved</th>
+                        <th>Working Time</th>
                     </tr>
                 </thead>
                     <tbody id="tableData">
                         <?php
-                        $sql = "select emp_name, Date, min(time) AS 'timein', max(time) AS 'timeout' , MIN(remarks) AS 'arrived' , MAX(remarks) AS 'leaved' FROM 
-                                attendance GROUP BY emp_name order by id desc";
+                        $sql = "select emp_name, Date, min(time) AS 'timein', max(time) AS 'timeout' , MIN(remarks) AS 'arrived' , MAX(remarks) AS 'leaved', SUBTIME(MAX(time), MIN(time)) as 'workingtime'  FROM attendance GROUP BY emp_name, Date  order by id desc;";
 
                         $result = mysqli_query($link , $sql);
                         if(mysqli_num_rows($result) > 0){
@@ -116,6 +116,7 @@ else{
                                 $timeout = $row['timeout'];
                                 $arrived = $row['arrived'];
                                 $leaved = $row['leaved'];
+                                $workingtime = $row['workingtime'];
                                 ?>
                                 <tr>
                                     <td> <?php echo $name ?> </td>
@@ -124,6 +125,7 @@ else{
                                     <td class="depart"> <?php echo $timeout ?> </td>
                                     <td class="arrive atime"> <?php echo $arrived ?> </td>
                                     <td class="depart dtime"> <?php echo $leaved ?> </td>
+                                    <td> <?php echo $workingtime ?> </td>
                                 </tr>
                                 <?php  
                             }
