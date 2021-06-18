@@ -1,3 +1,9 @@
+window.onload =  function(){
+  startTime();
+  remarkschange();
+};
+
+
 function startTime() {
   var today = new Date();
   var h = today.getHours();
@@ -15,21 +21,7 @@ function startTime() {
   }
 }
 
-
-function remarkschange(){
-  var depart = document.getElementsByTagName('table');
-  depart.style.backgroundColor = "red";
-  
-
-}
-
-
-  
  
- window.onload =  function(){
-  startTime();
-  remarkschange();
-};
 
 
 

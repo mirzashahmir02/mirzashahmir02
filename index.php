@@ -8,9 +8,10 @@ if(isset($_POST['submit'])){
  $curr_date = date("Y-m-d");
  $curr_time = date("H:i:s");
  $remarks = "came early";
- $remarks1 = "came late";
- $remarks2 = "leave late";
- $remarks3 = "leave early";
+ $remarks1 = "came early";
+ $remarks2 = "came late";
+ $remarks3 = "leave late";
+ $remarks4 = "leave early";
 
  $query = "select * from employees where emp_name = '$emp_name'";
  $result1 = mysqli_query($link , $query);
@@ -26,14 +27,19 @@ if(isset($_POST['submit'])){
 
                 
 if($curr_time < "10:55:30"){
-if($in >= $curr_time){
+if($in > $curr_time){
  $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
  '$remarks')";
+}
+
+else if($in == $curr_time){
+    $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
+   '$remarks1')";
 } 
 
 else if($in < $curr_time){
     $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
-   '$remarks1')";
+   '$remarks2')";
 }   
 }                
  
@@ -41,12 +47,12 @@ else if($in < $curr_time){
 else if($curr_time > "10:56:00"){
 if($out < $curr_time){
  $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
- '$remarks2')";
+ '$remarks3')";
 } 
 
 else if($out > $curr_time){
     $sql = "Insert into attendance(emp_name , Date, time , remarks) values('$emp_name', '$curr_date', '$curr_time', 
-   '$remarks3')";
+   '$remarks4')";
 }   
 }                
 
@@ -80,7 +86,7 @@ else if($out > $curr_time){
         <img src="img/ifbotix-white.png" alt="">
     </div>
     <div class="attendance_container">
-        <h1> ATTENDANCE </h1>
+        <p id="head"> ATTENDANCE </p>
         <div class="attendance_header">
             
             <p id="timep"> <span> Time: </span><span id="time">10:00:00</span>  </p>
@@ -101,11 +107,17 @@ else if($out > $curr_time){
                         <th>Arrived</th>
                         <th>Leaved</th>
                         <th>Working Time</th>
+                        <th>Over Time</th>
                     </tr>
                 </thead>
                     <tbody id="tableData">
                         <?php
-                        $sql = "select emp_name, Date, min(time) AS 'timein', max(time) AS 'timeout' , MIN(remarks) AS 'arrived' , MAX(remarks) AS 'leaved', SUBTIME(MAX(time), MIN(time)) as 'workingtime'  FROM attendance GROUP BY emp_name, Date  order by id desc;";
+                        $sql = "SELECT attendance.emp_name, attendance.Date, 
+                        MIN(time) AS 'timein', MAX(time) AS 'timeout',
+                        MIN(remarks) AS 'arrived', MAX(remarks) AS 'leaved', SUBTIME(MAX(time), MIN(time)) as 'workingtime' , SUBTIME(SUBTIME(MAX(time), MIN(time)), SUBTIME(shiftout, shiftin)) AS 'overtime'
+                            FROM employees, attendance
+                            WHERE employees.emp_name =
+                            attendance.emp_name GROUP BY emp_name, Date ORDER BY attendance.id DESC";
 
                         $result = mysqli_query($link , $sql);
                         if(mysqli_num_rows($result) > 0){
@@ -117,6 +129,7 @@ else if($out > $curr_time){
                                 $arrived = $row['arrived'];
                                 $leaved = $row['leaved'];
                                 $workingtime = $row['workingtime'];
+                                $overtime = $row['overtime'];
                                 ?>
                                 <tr>
                                     <td> <?php echo $name ?> </td>
@@ -126,6 +139,7 @@ else if($out > $curr_time){
                                     <td class="arrive atime"> <?php echo $arrived ?> </td>
                                     <td class="depart dtime"> <?php echo $leaved ?> </td>
                                     <td> <?php echo $workingtime ?> </td>
+                                    <td> <?php echo $overtime ?> </td>
                                 </tr>
                                 <?php  
                             }

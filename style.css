@@ -30,6 +30,11 @@ body{
     border-top-right-radius: 15px;
 }
 
+#head{
+    font-weight: bold;
+    font-size: 70px;
+}
+
 .attendance_container{
     background-color: #271464;
     box-shadow: 0 0 15px 5px rgba(7, 6, 6, 0.5);
@@ -37,13 +42,15 @@ body{
     max-width: 100%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 
 table{
     width: 100%;
     background-color: silver;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 #submit {
@@ -86,16 +93,20 @@ label{
 table {
     margin-top: 50px;
     text-align: center;
+    background-color: rgb(41, 45, 51);
+    color: white;
 }
 
 table thead tr th{
     font-size: 25px;
     color: black;
+    background-color: #f15a25;
 }
 
 table tbody tr td{
     font-size: 25px;
-    color: black;
+    color: white;
+    
 }
 
 
