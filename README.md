@@ -126,13 +126,12 @@ PHP, Laravel`.
         <img src="https://profile-counter.glitch.me/mirzashahmir02/count.svg" alt="mirzashahmir02 :: Visitor's Count" />
     </p>
 </div>
-
-
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=mirzashahmir02&theme=2077&utcOffset=6)
 
-[![Top
-Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mirzashahmir02&layout=compact&theme=algolia&langs_count=20&hide_border=true)](https://github.com/mirzashahmir02/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mirzashahmir02&layout=compact&theme=algolia&langs_count=20&hide_border=true)](https://github.com/mirzashahmir02/github-readme-stats)
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=mirzashahmir02&theme=cobalt&hide_border=true&border_radius=50&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
