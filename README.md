@@ -136,6 +136,3 @@ PHP, Laravel`.
 
 [![Top
 Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mirzashahmir02&layout=compact&theme=algolia&langs_count=20&hide_border=true)](https://github.com/mirzashahmir02/github-readme-stats)
-
-[![GitHub
-Streak](https://streak-stats.demolab.com?user=mirzashahmir02&theme=cobalt&hide_border=true&border_radius=50&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
