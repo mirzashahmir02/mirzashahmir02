@@ -126,6 +126,7 @@ PHP, Laravel`.
         <img src="https://profile-counter.glitch.me/mirzashahmir02/count.svg" alt="mirzashahmir02 :: Visitor's Count" />
     </p>
 </div>
+
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mirzashahmir02&theme=2077)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mirzashahmir02&theme=2077)
